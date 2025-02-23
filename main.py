@@ -13,12 +13,20 @@ screen.bgcolor("cyan")
 screen.title("Snake Game")
 
 
-positions = [(0, 0), (15, 0), (-20, 0), (-45, 0)]
+positions = [(0, 0), (-20, 0), (-40, 0)]
+
+segments = []
 
 for position in positions:
     segment = Turtle("square")
     segment.color("green")
+    segment.penup()
     segment.goto(position)
+    segments.append(position)
 
 
-screen.exitonclick()
+game_is_on = True
+while game_is_on:
+    for seg in segment:
+        seg.forward(20)
+
