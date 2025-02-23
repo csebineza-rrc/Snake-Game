@@ -9,6 +9,10 @@ import time
 
 POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 MOVE_DISTANCE = 20
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
 
 class Snake:
     """Represents the Snake class."""
@@ -56,26 +60,28 @@ class Snake:
         Moves the snake up, when the up key arrow is pressed.
         """
 
-        self.head.setheading(90)
+        self.head.setheading(UP)
 
     def down(self):
         """
         Moves the snake to the downward position when the down arrow is 
         pressed.
         """
-
-        self.head.setheading(270)
-
+        if self.head.heading() != DOWN:
+            self.head.setheading(UP)
+    
     def left(self):
         """
         Moves the snake to the left position.
         """
 
-        self.head.setheading(180)
+        if self.head.heading() != RIGHT:
+            self.head.setheading(LEFT)
 
     def right(self):
         """
         Moves the snake to the right position when the downward key is pressed.
         """
-
-        self.head.setheading(0)
+        if self.head.heading() != LEFT:
+            self.head.setheading(RIGHT)
+       
