@@ -20,6 +20,7 @@ class Snake:
         # Attributes
         self.segments = []
         self.create_snake()
+        self.head = self.segments[0]
 
     def create_snake(self):
         """ 
@@ -48,5 +49,33 @@ class Snake:
             self.segments[seg_num].goto(new_x, new_y)
 
         # Move the snake forward
-        self.segments[0].forward(MOVE_DISTANCE)
-        
+        self.head.forward(MOVE_DISTANCE)
+
+    def up(self):
+        """
+        Moves the snake up, when the up key arrow is pressed.
+        """
+
+        self.head.setheading(90)
+
+    def down(self):
+        """
+        Moves the snake to the downward position when the down arrow is 
+        pressed.
+        """
+
+        self.head.setheading(270)
+
+    def left(self):
+        """
+        Moves the snake to the left position.
+        """
+
+        self.head.setheading(180)
+
+    def right(self):
+        """
+        Moves the snake to the right position when the downward key is pressed.
+        """
+
+        self.head.setheading(0)
