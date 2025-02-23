@@ -13,7 +13,12 @@ screen.bgcolor("cyan")
 screen.title("Snake Game")
 
 
+positions = [(0, 0), (15, 0), (-20, 0), (-45, 0)]
 
+for position in positions:
+    segment = Turtle("square")
+    segment.color("green")
+    segment.goto(position)
 
 
 screen.exitonclick()
