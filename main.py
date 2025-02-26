@@ -7,6 +7,7 @@ __version__ = "2.2.2025"
 
 from turtle import Screen, Turtle
 from snake import Snake
+from snake_food import Food
 import time
 
 screen = Screen()
@@ -14,8 +15,9 @@ screen.setup(width=700, height=700)
 screen.bgcolor("cyan")
 screen.title("Snake Game")
 
-# Creating the snake object
+# Creating the snake and food object
 snake = Snake()
+food = Food()
 
 # Event listeners for controlling the snake
 screen.listen()
