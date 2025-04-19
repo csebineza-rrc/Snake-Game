@@ -5,7 +5,7 @@ Description: A program that creates the infamous snake game.
 __author__ = "Cedrick S"
 __version__ = "2.2.2025"
 
-from turtle import Screen, Turtle
+from turtle import Screen
 from snake import Snake
 from snake_food import Food
 import time
@@ -30,8 +30,10 @@ game_is_on = True
 while game_is_on:
     screen.update()
     time.sleep(0.5)
-
-    # Moving the snake using the snake object
-    snake.move()
+    snake.move() # Moving the snake using the snake object
+    
+    # Detect collision with food
+    if snake.head.distance(food) < 15:
+        print("non nom nom")
 
 screen.exitonclick()
