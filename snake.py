@@ -33,11 +33,25 @@ class Snake:
         """
 
         for position in POSITIONS:
-            segment = Turtle("square")
-            segment.color("green")
-            segment.penup()
-            segment.goto(position)
-            self.segments.append(segment)
+            self.add_segment(position)
+           
+    def add_segment(self, position):
+        """ Adds a segment to the snake.
+
+        Args:
+            position (int): The position of the segment.
+        """
+
+        segment = Turtle("square")
+        segment.color("green")
+        segment.penup()
+        segment.goto(position)
+        self.segments.append(segment)
+
+    def extend(self):
+        """Extends the length of the snake."""
+
+        self.add_segment(self.segments[-1].position())
 
     def move(self):
         """
