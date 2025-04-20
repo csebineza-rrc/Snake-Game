@@ -43,6 +43,7 @@ while game_is_on:
     if snake.head.xcor() > 350 or snake.head.xcor() < -350 or snake.head.ycor() \
     > 350 or snake.head.ycor() < -350:
         game_is_on = False  # End the game
+        score.game_over()
 
 
 screen.exitonclick()
