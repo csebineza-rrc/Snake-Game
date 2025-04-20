@@ -6,7 +6,6 @@ __version__ = "1.1.2025"
 from turtle import Screen, Turtle
 import time
 
-
 POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 MOVE_DISTANCE = 20
 UP = 90
@@ -60,15 +59,17 @@ class Snake:
         Moves the snake up, when the up key arrow is pressed.
         """
 
-        self.head.setheading(UP)
+        if self.head.heading() != DOWN:
+            self.head.setheading(UP)
 
     def down(self):
         """
         Moves the snake to the downward position when the down arrow is 
         pressed.
         """
-        if self.head.heading() != DOWN:
-            self.head.setheading(UP)
+
+        if self.head.heading() != UP:
+            self.head.setheading(DOWN)
     
     def left(self):
         """
@@ -82,6 +83,7 @@ class Snake:
         """
         Moves the snake to the right position when the downward key is pressed.
         """
+
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
        
